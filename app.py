@@ -5,10 +5,7 @@ import psycopg2
 
 # --- HARD-CODED CREDENTIALS ---
 DATABASE_URL = (
-    "postgresql://mydata_uzjz_user:"
-    "gCvrzLg4mVkWkO7pMy7Eo4hYEXGsbPsP"
-    "@dpg-d2tat73e5dus73dln4k0-a.oregon-postgres.render.com/"
-    "mydata_uzjz?sslmode=require"
+    postgresql://database1_6wg8_user:sspqccBIeaqnQCI4EQEMlUadqGoOynDD@dpg-d3hav6r3fgac739llno0-a.singapore-postgres.render.com/database1_6wg8
 )
 SECRET_KEY = "super_secret_for_demo"  # change for production
 
