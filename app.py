@@ -50,7 +50,9 @@ def load_user(user_id):
     if row:
         return User(*row)
     return None
-
+@app.route("/collegenotes")
+def showcollegenotes():
+    return render_template("collegenotes/index.html")
 # --- Register route ---
 @app.route('/register', methods=['GET', 'POST'])
 def register():
