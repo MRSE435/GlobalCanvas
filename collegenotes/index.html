@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Notes Dashboard</title>
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use the Inter font and enable dark mode via class -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+    </style>
+    <!-- Load Lucide Icons for aesthetic subject icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen pt-12 pb-20">
+
+    <div class="container mx-auto px-4 md:px-8">
+
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-extrabold text-indigo-600 dark:text-indigo-400">
+                College Notes
+            </h1>
+            <p class="text-lg mt-2 text-gray-600 dark:text-gray-400">
+                Your study materials for all subjects, ready to download.
+            </p>
+        </header>
+
+        <!-- Utility Bar (Dark Mode Toggle & About Button) -->
+        <div class="flex justify-between items-center mb-8 max-w-6xl mx-auto">
+            <button id="about-btn" class="flex items-center space-x-2 text-sm font-medium px-4 py-2 rounded-full transition duration-300 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600">
+                <i data-lucide="info" class="w-4 h-4"></i>
+                <span>About</span>
+            </button>
+            <button id="dark-mode-toggle" class="flex items-center space-x-2 text-sm font-medium px-4 py-2 rounded-full transition duration-300 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600">
+                <i data-lucide="moon" class="w-4 h-4 dark:hidden"></i>
+                <i data-lucide="sun" class="w-4 h-4 hidden dark:inline"></i>
+                <span class="dark:hidden">Dark Mode</span>
+                <span class="hidden dark:inline">Light Mode</span>
+            </button>
+        </div>
+
+        <!-- Subject Cards Grid -->
+        <main id="subject-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+            <!-- Card 1: Operating System - Download Link Example -->
+            <div class="subject-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition duration-300">
+                <div class="card-icon bg-blue-500 rounded-lg p-4 mb-4 flex items-center justify-center h-20 w-full">
+                    <i data-lucide="settings" class="w-10 h-10 text-white"></i>
+                </div>
+                <h3 class="text-2xl font-semibold mt-4 mb-3">Operating System</h3>
+                <p class="text-gray-500 dark:text-gray-400 mb-6">Core concepts and system management notes.</p>
+                <!-- FIX: Changed href to a placeholder that reliably triggers a download when the file path is unknown. -->
+                <!-- When you deploy this, REPLACE the entire href with the actual URL to your file (e.g., /notes/os_notes.pptx). -->
+                <a href="demo.html" class="inline-block w-full text-center bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-150">Download</a>
+            </div>
+
+            <!-- Card 2: Artificial Intelligence -->
+            <div class="subject-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition duration-300">
+                <div class="card-icon bg-emerald-500 rounded-lg p-4 mb-4 flex items-center justify-center h-20 w-full">
+                    <i data-lucide="brain" class="w-10 h-10 text-white"></i>
+                </div>
+                <h3 class="text-2xl font-semibold mt-4 mb-3">Artificial Intelligence</h3>
+                <p class="text-gray-500 dark:text-gray-400 mb-6">Algorithms, machine learning, and deep learning.</p>
+                <a href="#" class="inline-block w-full text-center bg-emerald-600 text-white py-2 rounded-lg font-medium hover:bg-emerald-700 transition duration-150">Download</a>
+            </div>
+
+            <!-- Card 3: Python -->
+            <div class="subject-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition duration-300">
+                <div class="card-icon bg-yellow-500 rounded-lg p-4 mb-4 flex items-center justify-center h-20 w-full">
+                    <i data-lucide="code" class="w-10 h-10 text-white"></i>
+                </div>
+                <h3 class="text-2xl font-semibold mt-4 mb-3">Python Programming</h3>
+                <p class="text-gray-500 dark:text-gray-400 mb-6">Basic to advanced programming concepts.</p>
+                <a href="#" class="inline-block w-full text-center bg-yellow-600 text-white py-2 rounded-lg font-medium hover:bg-yellow-700 transition duration-150">Download</a>
+            </div>
+
+            <!-- Card 4: Web Technologies -->
+            <div class="subject-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition duration-300">
+                <div class="card-icon bg-purple-500 rounded-lg p-4 mb-4 flex items-center justify-center h-20 w-full">
+                    <i data-lucide="globe" class="w-10 h-10 text-white"></i>
+                </div>
+                <h3 class="text-2xl font-semibold mt-4 mb-3">Web Technologies</h3>
+                <p class="text-gray-500 dark:text-gray-400 mb-6">HTML, CSS, JavaScript, and framework guides.</p>
+                <a href="#" class="inline-block w-full text-center bg-purple-600 text-white py-2 rounded-lg font-medium hover:bg-purple-700 transition duration-150">Download</a>
+            </div>
+
+            <!-- Card 5: English -->
+            <div class="subject-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition duration-300">
+                <div class="card-icon bg-red-500 rounded-lg p-4 mb-4 flex items-center justify-center h-20 w-full">
+                    <i data-lucide="book-open" class="w-10 h-10 text-white"></i>
+                </div>
+                <h3 class="text-2xl font-semibold mt-4 mb-3">English Communication</h3>
+                <p class="text-gray-500 dark:text-gray-400 mb-6">Grammar, writing, and professional communication.</p>
+                <a href="#" class="inline-block w-full text-center bg-red-600 text-white py-2 rounded-lg font-medium hover:bg-red-700 transition duration-150">Download</a>
+            </div>
+
+            <!-- Card 6: Hindi -->
+            <div class="subject-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition duration-300">
+                <div class="card-icon bg-orange-500 rounded-lg p-4 mb-4 flex items-center justify-center h-20 w-full">
+                    <i data-lucide="feather" class="w-10 h-10 text-white"></i>
+                </div>
+                <h3 class="text-2xl font-semibold mt-4 mb-3">Hindi Language</h3>
+                <p class="text-gray-500 dark:text-gray-400 mb-6">Literature, poetry, and linguistic notes.</p>
+                <a href="#" class="inline-block w-full text-center bg-orange-600 text-white py-2 rounded-lg font-medium hover:bg-orange-700 transition duration-150">Download</a>
+            </div>
+
+            <!-- Card 7: Lab Programs - Icon Updated -->
+            <div class="subject-card bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition duration-300">
+                <div class="card-icon bg-pink-500 rounded-lg p-4 mb-4 flex items-center justify-center h-20 w-full">
+                    <!-- ICON CHANGE: Changed to 'clipboard-list' for a better visual representation of assignments/programs -->
+                    <i data-lucide="clipboard-list" class="w-10 h-10 text-white"></i>
+                </div>
+                <h3 class="text-2xl font-semibold mt-4 mb-3">Lab Programs</h3>
+                <p class="text-gray-500 dark:text-gray-400 mb-6">Practical assignments and implementation details.</p>
+                <a href="#" class="inline-block w-full text-center bg-pink-600 text-white py-2 rounded-lg font-medium hover:bg-pink-700 transition duration-150">Download</a>
+            </div>
+            
+        </main>
+
+    </div>
+
+    <!-- Developer Info Modal -->
+    <div id="developer-modal" class="fixed inset-0 bg-gray-900 bg-opacity-80 dark:bg-opacity-90 z-50 hidden transition-opacity duration-300" onclick="closeModal()">
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-2xl max-w-sm w-full relative" onclick="event.stopPropagation()">
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+                <h4 class="text-2xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">About Developer</h4>
+                <p class="text-gray-700 dark:text-gray-300 mb-4">
+                    This notes hub was developed by a fellow student.
+                </p>
+                <!-- UPDATED: Added anchor tag for the GitHub link -->
+                <div class="flex items-center space-x-3 p-3 bg-gray-100 dark:bg-gray-700 rounded-lg">
+                    <i data-lucide="github" class="w-6 h-6 text-gray-600 dark:text-gray-300"></i>
+                    <!-- GitHub ID is now a clickable link -->
+                    <a id="github-id-text" href="https://github.com/MRSE435" target="_blank" 
+                       class="text-lg font-mono tracking-wider text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 transition duration-150 underline">
+                        MRSE435
+                    </a>
+                    <!-- Copy button remains -->
+                    <button id="copy-github-btn" class="ml-auto text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition duration-150" title="Copy GitHub ID">
+                        <i data-lucide="copy" class="w-4 h-4"></i>
+                    </button>
+                </div>
+                <p id="copy-message" class="text-xs text-green-600 dark:text-green-400 mt-2 h-4 transition duration-300 opacity-0">Copied!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Dark Mode and Modal Logic -->
+    <script>
+        // --- INITIAL THEME CHECK ---
+        // Checks local storage or system preference to set the initial theme class.
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            // This 'else' ensures that if light mode is explicitly preferred or default, the 'dark' class is removed.
+            document.documentElement.classList.remove('dark');
+        }
+        
+        // --- Dark Mode Toggle Logic ---
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        darkModeToggle.addEventListener('click', () => {
+            // Toggles the 'dark' class on the root HTML element
+            const isDark = document.documentElement.classList.toggle('dark');
+            // Saves the user's preference
+            localStorage.theme = isDark ? 'dark' : 'light';
+            
+            // Re-render Lucide icons after class change to ensure correct dark mode colors
+            lucide.createIcons();
+        });
+
+        // --- Modal Logic ---
+        const aboutBtn = document.getElementById('about-btn');
+        const modal = document.getElementById('developer-modal');
+
+        aboutBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+            // Give a slight delay before showing animation
+            setTimeout(() => modal.style.opacity = '1', 10); 
+        });
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+        
+        // --- GitHub ID Copy Logic ---
+        const copyBtn = document.getElementById('copy-github-btn');
+        const githubIdText = document.getElementById('github-id-text');
+        const copyMessage = document.getElementById('copy-message');
+
+        copyBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            // Since githubIdText is an <a> tag, we get the text content (MRSE435) for copying.
+            const textToCopy = githubIdText.textContent.trim();
+            
+            // Fallback for secure environments (like iframes) to copy text
+            try {
+                const textarea = document.createElement('textarea');
+                textarea.value = textToCopy;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                
+                // Show success message
+                copyMessage.style.opacity = '1';
+                setTimeout(() => copyMessage.style.opacity = '0', 2000);
+
+            } catch (err) {
+                console.error('Failed to copy text:', err);
+            }
+        });
+        
+        // --- Initialize Lucide Icons ---
+        window.onload = () => {
+             // Create all Lucide icons on page load
+             lucide.createIcons();
+        };
+
+    </script>
+</body>
+</html>
