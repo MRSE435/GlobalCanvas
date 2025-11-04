@@ -50,6 +50,9 @@ def load_user(user_id):
     if row:
         return User(*row)
     return None
+@app.route("/netflixclone")
+def shownetflix():
+    return render_template("netflixv2/index.html")
 @app.route("/collegenotes")
 def showcollegenotes():
     return render_template("collegenotes/index.html")
