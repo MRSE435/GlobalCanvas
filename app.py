@@ -4,7 +4,7 @@ from flask_login import LoginManager, login_user, login_required, logout_user, U
 import psycopg2
 
 # --- HARD-CODED CREDENTIALS ---
-DATABASE_URL = "postgresql://databases_7cq3_user:75pEHmpS58nUW55ENsADzTSjlWqjCEuZ@dpg-d45gmk8dl3ps738dclm0-a.singapore-postgres.render.com/databases_7cq3"
+DATABASE_URL = "postgresql://dbdb_vg45_user:cWfHVmibdzrPVw49axkS2MNadz7DcW57@dpg-d7q8aoj7uimc738dmcj0-a.singapore-postgres.render.com/dbdb_vg45"
 
 SECRET_KEY = "super_secret_for_demo"  # change for production
 
