@@ -57,6 +57,9 @@ def shownetflix():
 def showcollegenotes():
     return render_template("collegenotes/index.html")
 # --- Register route ---
+@app.route("/portfolio")
+def showportfolio()
+    return render_template("Portfolio/index.html")
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
